@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party</title>
+
+     <!-- Latest compiled and minified CSS -->
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+     
+         <link
+           rel="stylesheet"
+           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+         />
+     
+         <!-- jQuery library -->
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     
+         <!-- Popper JS -->
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+     
+         <!-- Latest compiled JavaScript -->
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+     
+         <!-- /* awesome */
+      -->
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+         <script
+           src="https://kit.fontawesome.com/6b0e429c28.js"
+           crossorigin="anonymous"
+         ></script>
+           
+<link
+rel="stylesheet"
+type="text/css"
+href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css"
+/>
+<script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"
+    ></script>
+         <link rel="stylesheet" href="css/style.css" />
+         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+  <div id="myprecioso">
+    <div class="container">
+      <header_nav></header_nav>
+        <br />
+      <div class="row">
+          <div class="col-6">
+              <h2>Party</h2>
+              <p>{{parrafo1}}</p>
+          </div>
+          <div class="col-6">
+              <h2>Senate at a glance</h2>
+              <table class="table table-bordered table-hover" id="se-data">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Party</th>
+                    <th scope="col">N° of Reps</th>
+                    <th scope="col">% voted W / Party</th>
+                    
+                  </tr>
+                </thead>
+                <tbody v-for="est of estadistica">
+
+                  
+                  <tr >
+                    <td>democrats</td>
+                  <td>{{est.democratas}}</td>
+                  <td>{{est.porcD}}</td>
+                  </tr>
+                  <tr>
+                    <td>Republicans</td>
+                    <td>{{est.republicanos}}</td>
+                    <td>{{est.porcR}}</td>
+                  </tr>
+                  <tr>
+                    <td>Independents</td>
+                    <td>{{est.independiente}}</td>
+                    <td>{{est.porcI}}</td>
+                  </tr>
+                  <tr>
+                    <td>Total</td>
+                    <td>{{est.cant}}</td>
+                    <td>100%</td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+        
+
+      </div>
+  </div>
+  <hr>
+    <div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h3>Least Loyal (Bottom 10% Attendance)</h3>
+          <table class="table table-bordered table-hover" id="par-a">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">N° Missed Votes</th>
+                  <th scope="col">% Missed</th>
+                  
+                </tr>
+              </thead>
+              <tbody v-for="arr of estadistica">
+                <tr v-for="t of arr.arreglo1">
+                  <td> {{t.first_name}}   {{t.middle_name || ""}} 
+                    {{t.last_name}}</td>
+                    <td>{{t.missed_votes}}</td>
+                    <td>{{t.missed_votes_pct}}</td>
+                </tr>
+
+              </tbody>
+            </table>
+        </div>
+        <div class="col-6">
+          <h3>Most Loyal (Top 10% Attendance)</h3>
+          <table class="table table-bordered table-hover" id="par-b">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">N° Missed Votes</th>
+                  <th scope="col">% Missed</th>
+                  
+                </tr>
+              </thead>
+              <tbody v-for="arre of estadistica">
+                <tr v-for="y of arre.arreglo2">
+                  <td> {{y.first_name}}   {{y.middle_name || ""}} 
+                    {{y.last_name}}</td>
+                    <td>{{y.missed_votes}}</td>
+                    <td>{{y.missed_votes_pct}}</td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </div>
+  <footer_n></footer_n>
+  </div>
+     
+   
+  <script src="js/party.js" type="module"></script>
+</body>
+</html>
