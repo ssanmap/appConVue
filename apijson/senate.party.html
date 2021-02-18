@@ -46,10 +46,11 @@ href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css"
          <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
-  <div id="myprecioso">
-    <div class="container">
+  <div id="myprecioso" v-if="loadingM == false">
+   
       <header_nav></header_nav>
         <br />
+        <div class="container">
       <div class="row">
           <div class="col-6">
               <h2>Party</h2>
@@ -147,7 +148,9 @@ href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css"
   </div>
   <footer_n></footer_n>
   </div>
-     
+  <div class="container"  >
+    <div class="loadi" v-once></div>
+    </div>
    
   <script src="js/party.js" type="module"></script>
 </body>

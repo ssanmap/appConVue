@@ -3,16 +3,7 @@
 import header_nav from './navbar.js'
 import footer_n from './footer.js'
 import loader from './loader.js'
-const myid = new Vue({
-    el: '#myid',
-    data:{
 
-        parrafo1:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quaerattempore distinctio quis reiciendis illum maiores, sit recusandae optio est itaque, praesentium repudiandae earum, blanditiis atque aut adaspernatur vel. Nemo nobis itaque labore minima dolorem voluptatibusvelit harum illo, officiis eveniet earum, facilis beatae. Autaccusantium distinctio laboriosam doloremque aspernatur? Nam maximexpedita, saepe atque fugit fuga ut repellendus! Cumque harum eosveritatis officiis at, earum sint unde nam in iste, minima autemrepellendus dolorem a praesentium error quia. Sint unde et sit.Eligendi laudantium nihil impedit ratione nobis. Veniam sunt accusamusnam non quam quos sed hic error, dolores doloribus? Incidunt adreprehenderit nulla tempore. Aliquam sit minima, praesentium laborumnulla obcaecati sapiente, blanditiis, exercitationem expedita dolorescupiditate.'
-       
-    }
-   
-    
-})
 
 const primerasDosPag = new Vue({
     el: '#mysApps',
@@ -44,11 +35,20 @@ const primerasDosPag = new Vue({
                     }
                 }
             )
+
+          
             const responseJson = await response.json();
             const members = await responseJson.results[0].members;
             this.members = await members;
             this.loadingM = false;
+            if(response.status === 200){
 
+           
+                $(document).ready(function() {
+                    $('#senate-data').DataTable();
+                    $('#house-data').DataTable();
+                  } );
+            }
             console.log(members)
         }
     }

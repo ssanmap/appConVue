@@ -17,3 +17,40 @@ h1{
     font-family: 'Potta One', cursive;
     font-size: 22px;
 }
+[v-cloack] >*{display: none;}
+.loadd::before{
+    content:"";
+    display: block;
+    margin: auto;
+    width: 150px;
+    height: 220px;
+    background-image: url('https://loading.io/mod/spinner/bean-eater/sample.gif');
+    background-repeat: no-repeat;
+    background-size: auto;
+    margin-top: 300px;
+}
+
+
+
+.loadi{
+   
+    display: block;
+    margin: auto;
+    width: 150px;
+    height: 220px;
+    background-image: url('https://loading.io/mod/spinner/fidget-spinner/sample.gif');
+    background-repeat: no-repeat;
+    background-size: auto;
+    margin-top: 300px;
+    content:"";
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+	text-align:center;
+   
+}
+
+.loadi::after{
+    display: none;
+}
+

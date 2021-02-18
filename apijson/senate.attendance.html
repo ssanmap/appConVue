@@ -46,7 +46,7 @@ href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css"
          <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
-  <div id="myprecioso">
+  <div id="myprecioso" v-if="loadingM == false">
     <header_nav></header_nav>
       <br />
 
@@ -150,7 +150,9 @@ href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css"
   </div>
   <footer_n></footer_n>
   </div>    
-
+  <div class="container"  v-else="">
+    <div class="loadd"></div>
+    </div>
      
     
   
