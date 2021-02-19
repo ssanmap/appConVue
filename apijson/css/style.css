@@ -1,0 +1,56 @@
+.footer {
+    background-image: url("https://i.stack.imgur.com/AZ2Xw.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 200px;
+  }
+
+  img{
+      border-radius: 50%;
+  }
+
+h1{
+    font-family: 'Press Start 2P', cursive;
+}
+.nemesis{
+    font-family: 'Potta One', cursive;
+    font-size: 22px;
+}
+[v-cloack] >*{display: none;}
+.loadd::before{
+    content:"";
+    display: block;
+    margin: auto;
+    width: 150px;
+    height: 220px;
+    background-image: url('https://loading.io/mod/spinner/bean-eater/sample.gif');
+    background-repeat: no-repeat;
+    background-size: auto;
+    margin-top: 300px;
+}
+
+
+
+.loadi{
+   
+    display: block;
+    margin: auto;
+    width: 150px;
+    height: 220px;
+    background-image: url('https://loading.io/mod/spinner/fidget-spinner/sample.gif');
+    background-repeat: no-repeat;
+    background-size: auto;
+    margin-top: 300px;
+    content:"";
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+	text-align:center;
+   
+}
+
+.loadi::after{
+    display: none;
+}
+
