@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarea Congreso Senado</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- /* awesome */
+ -->
+    <script
+      src="https://kit.fontawesome.com/6b0e429c28.js"
+      crossorigin="anonymous"
+    ></script>
+
+   
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+   
+<link
+rel="stylesheet"
+type="text/css"
+href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css"
+/>
+<script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"
+    ></script>
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="mysApps">
+      <loader v-if="loadingM"></loader>
+      <header_nav></header_nav>
+      <br />
+      <div class="contenedor-encabezado">
+        <h1 class="ml-5">Senators</h1>
+        <p class="col-7 ml-5">
+        {{parrafo1}}
+        </p>
+      </div>
+  
+      <div class="container bg-light border border-light">
+        <table class="table table-bordered table-hover" id="senate-data">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Party</th>
+              <th scope="col">State</th>
+              <th scope="col">Years in Office</th>
+              <th scope="col">% Votes w/ Party</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="member of members">
+              <td><a :href="member.url">
+                  {{member.first_name}}   {{member.middle_name || ""}} 
+                  {{member.last_name}}
+                </a>
+              </td>
+              <td>{{member.party}}</td>
+              <td>{{member.state}}</td>
+              <td>{{member.seniority}}</td>
+              <td>{{member.votes_with_party_pct}}%</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <br />
+      <footer_n></footer_n>
+    </div>
+
+    <script src="js/app.js" type="module"></script>
+  </body>
+</html>

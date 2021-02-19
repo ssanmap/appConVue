@@ -1,0 +1,56 @@
+.footer {
+    background-image: url("https://i.stack.imgur.com/AZ2Xw.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 200px;
+  }
+
+  img{
+      border-radius: 50%;
+  }
+
+h1{
+    font-family: 'Press Start 2P', cursive;
+}
+.nemesis{
+    font-family: 'Potta One', cursive;
+    font-size: 22px;
+}
+
+.loadd::after{
+    content:"";
+    display: block;
+    margin: auto;
+    width: 150px;
+    height: 220px;
+    background-image: url('../img/pac.svg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    margin-top: 300px;
+}
+
+
+
+.loadi{
+   
+    display: block;
+    margin: auto;
+    width: 150px;
+    height: 220px;
+    background-image: url('../img/pac.svg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    margin-top: 300px;
+    content:"";
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+	text-align:center;
+   
+}
+
+.loadi::after{
+    display: none;
+}
+
